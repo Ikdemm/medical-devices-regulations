@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>willkommen!</h1>
+  <p>Please enter the title of the document you're loking for</p>
+  <form [formGroup]="searchForm" (ngSubmit)="searchDocument()">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">
+          <img src="assets/images/search.svg" width="20px">
+        </span>
+      </div>
+      <input type="text" formControlName="title" class="form-control" id="title">
+    </div>
+    <button type="submit" class="btn btn-primary search-button">
+      Search
+    </button>
+    <button
+      class="btn btn-secondary list-button"
+      routerLink="/list"
+      >View full list
+    </button>
+  </form>
+  <img src="assets/images/background.jpg" class="home-image">
+</div>
