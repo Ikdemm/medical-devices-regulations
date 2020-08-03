@@ -7,7 +7,7 @@ import { ListComponent } from './list/list.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'list/:input', component: ListComponent },
-  { path: '', component: HomeComponent}
+  { path: '', component: ListComponent}
 ];
 
 @NgModule({
