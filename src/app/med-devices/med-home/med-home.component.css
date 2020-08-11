@@ -1,4 +1,4 @@
-.container {
+/*.container {
     padding-top: 10em;
     text-align: center;
   }
@@ -24,4 +24,66 @@
   .home-image {
     margin-top: 5em;
     width: 30em;
+  }*/
+  .form-container {
+    padding: 2em 4em;
+    background-color: #EAEFF9;
   }
+  
+  .submit-button {
+    background-color: #a1c4d8;
+    color: white;
+    font-weight: 700;
+    font-size: 1.8em;
+  }
+  
+  .submit-button:hover {
+    background-color: #85aec5;
+  }
+  
+  .cards-container {
+    padding: 2em;
+  }
+  
+  .btn-pdf {
+    background-color: transparent;
+    border: 1px solid rgb(185, 40, 40);
+    color: rgb(185, 40, 40);
+    margin: 0.5em;
+  }
+  
+  .btn-pdf:hover {
+    background-color: rgb(185, 40, 40);
+    border: 1px solid rgb(185, 40, 40);
+    color: white;
+    margin: 0.5em;
+  }
+  
+  .btn-excel {
+    background-color: transparent;
+    border: 1px solid rgb(17, 128, 17);
+    color: rgb(17, 128, 17);
+    margin: 0.5em;
+  }
+  
+  .btn-excel:hover {
+    background-color: rgb(17, 128, 17);
+    border: 1px solid rgb(17, 128, 17);
+    color: white;
+    margin: 0.5em;
+  }
+  
+  .btn-zip {
+    background-color: transparent;
+    border: 1px solid rgb(173, 173, 49);
+    color: rgb(173, 173, 49);
+    margin: 0.5em;
+  }
+  
+  .btn-zip:hover {
+    background-color: rgb(173, 173, 49);
+    border: 1px solid rgb(173, 173, 49);
+    color: white;
+    margin: 0.5em;
+  }
+  

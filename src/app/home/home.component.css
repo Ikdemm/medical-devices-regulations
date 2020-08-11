@@ -62,7 +62,7 @@ p {
   background-color: #FFD000;
 }
 
-.brand-button {
+.trademark-button {
   height: 50px;
   width: 300px;
   font-size: 1em;
@@ -73,7 +73,7 @@ p {
   background-color: transparent;
 }
 
-.brand-button:hover {
+.trademark-button:hover {
   color: grey;
   background-color: #fff;
 }

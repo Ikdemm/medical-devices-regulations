@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DocumentService } from '../services/document.service';
-import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,20 +8,14 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private documentService: DocumentService,
-              private formBuilder: FormBuilder,
-              private router: Router) { }
+  constructor(private router: Router) { }
 
-  documents;
-  foundElements = [];
+  goToDevices() {
+    this.router.navigate(["/medical-devices"]);
+  }
 
-  searchForm = this.formBuilder.group({
-    title: ['']
-  })
-
-  searchDocument() {
-    let input = this.searchForm.get("title").value;
-    this.router.navigate(['list', input]);
+  goToTrademark() {
+    this.router.navigate(["/trademarks"]);
   }
 
   ngOnInit() {
