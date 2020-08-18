@@ -2259,7 +2259,10 @@
       "assets/documents/europe/03/05/01.pdf"
     ],
     "excel": [
-      "assets/documents/europe/03/05/01.xlsx"
+      {
+        "title": "Excel",
+        "file": "assets/documents/europe/03/05/01.xlsx"
+      }
     ],
     "country": "Europe",
     "category": "Medical Device Coordination Group (MDCG)",
@@ -2688,7 +2691,10 @@
     "year": 2015,
     "month": 5,
     "excel": [
-      "assets/documents/europe/06/06/05.xlsx"
+      {
+        "title": "Excel",
+        "file": "assets/documents/europe/06/06/05.xlsx"
+      }      
     ],
     "country": "Europe",
     "subcategory": "Clinical investigation, clinical evaluation",
@@ -2699,7 +2705,10 @@
     "year": 2010,
     "month": 12,
     "excel": [
-      "assets/documents/europe/06/06/06.pdf"
+      {
+        "title": "Excel",
+        "file": "assets/documents/europe/06/06/06.pdf" 
+      }
     ],
     "country": "Europe",
     "subcategory": "Clinical investigation, clinical evaluation",
@@ -4230,7 +4239,10 @@
       "assets/documents/europe/13/03/01.pdf"
     ],
     "excel": [
-      "assets/documents/europe/13/03/01.xlsx"
+      {
+        "title": "Excel",
+        "file": "assets/documents/europe/13/03/01.xlsx"
+      }
     ],
     "country": "Europe",
     "subcategory": "GHTF Study Group 2 - Final Documents – Post-market Surveillance/Vigilance",

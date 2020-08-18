@@ -9,99 +9,104 @@ import { Document } from '../models/document';
 })
 export class DocumentService {
 
-  private _url = "../../assets/documents/plainDocuments.json";
+  private _documentsUrl = "../../assets/documents/plainDocuments.json";
+  private _countriesUrl = "../../assets/documents/countries.json";
 
   constructor(private http: HttpClient) { }
 
-  getData() {
-    return this.http.get(this._url);     
+  getCountries() {
+    return this.http.get(this._countriesUrl);     
   }
 
-  getAllDocuments() {
-    // let documents: Array<Document>;
-    let documents = [];
-    this.getData().subscribe((data: Array<Document>) => {
-      data.forEach(element => documents.push(element));
-      // documents = [...data];
-    });
-    return documents;
+  getDocuments() {
+    return this.http.get(this._documentsUrl);     
   }
 
-  getDataByCountry(country) {
-    if (!country) {return this.getAllDocuments()}
-    let europe, germany;
-    this.http.get('../../assets/documents/documents.json').subscribe( (data: Array<Object>) => {
-      [
-        europe,
-        germany
-      ] = data;
-      return (country === "europe") ? europe : germany;
-    });
-  }
+  // getCountries() {
+  //   // let documents: Array<Document>;
+  //   let documents = [];
+  //   this.getData().subscribe((data: Array<Document>) => {
+  //     data.forEach(element => documents.push(element));
+  //     // documents = [...data];
+  //   });
+  //   return documents;
+  // }
 
-  getCategoriesByCountry(country) {
-    let categories = this.getDataByCountry(country).map((element) => {return element['title']});
-    console.log(categories);
-    return categories;
-  }
+  // getDataByCountry(country) {
+  //   if (!country) {return this.getAllDocuments()}
+  //   let europe, germany;
+  //   this.http.get('../../assets/documents/documents.json').subscribe( (data: Array<Object>) => {
+  //     [
+  //       europe,
+  //       germany
+  //     ] = data;
+  //     return (country === "europe") ? europe : germany;
+  //   });
+  // }
 
-  getSubCategories(category) {
-    let retrievedData;
-    let subCategories = [];
-    this.http.get('../../assets/documents/subCategories.json').subscribe(data => {
-      retrievedData = data;
-      retrievedData.filer(element => element.category === category);
-    });
-    return subCategories;
-  }
+  // getCategoriesByCountry(country) {
+  //   let categories = this.getDataByCountry(country).map((element) => {return element['title']});
+  //   console.log(categories);
+  //   return categories;
+  // }
 
-  getCategories(country) {
-    let categories = [];
-    this.http.get('../../assets/documents/categories.json').subscribe((data: Array<Object>) => {
-      categories = data.filter(category => category['country'] === country);
-    });
-    return categories;
-  }
+  // getSubCategories(category) {
+  //   let retrievedData;
+  //   let subCategories = [];
+  //   this.http.get('../../assets/documents/subCategories.json').subscribe(data => {
+  //     retrievedData = data;
+  //     retrievedData.filer(element => element.category === category);
+  //   });
+  //   return subCategories;
+  // }
 
-  getDocumentsBySubC(subcategory) {
-    let retrievedData;
-    let documents = [];
-    this.http.get('../../assets/documents/subCategories.json').subscribe(data => {
-      retrievedData = data;
-      retrievedData.forEach(sub => {
-        if (sub.title === subcategory) {
-          sub.documents.forEach(doc => {
-            let document = doc;
-            document.subcategory = sub.title;
-            document.category = sub.category;
-            documents.push(doc);
-            console.log(doc);
-          });
-        }
-      });
-    });
-    return documents;
-  }
+  // getCategories(country) {
+  //   let categories = [];
+  //   this.http.get('../../assets/documents/categories.json').subscribe((data: Array<Object>) => {
+  //     categories = data.filter(category => category['country'] === country);
+  //   });
+  //   return categories;
+  // }
 
-  getDocumentByName(input) {
-    let retrievedData;
-    let documents = [];
-    this.http.get('../../assets/documents/subCategories.json').subscribe(data => {
-      retrievedData = data;
-      retrievedData.forEach(sub => {
-        sub.documents.forEach(doc => {
-          if (doc.title.includes(input)) {
-            let document = doc;
-            document.subcategory = sub.title;
-            document.category = sub.category;
-            documents.push(doc);
-            console.log(doc);
-          }
-        });
-      });
-    });
-    return documents;
-  }
+  // getDocumentsBySubC(subcategory) {
+  //   let retrievedData;
+  //   let documents = [];
+  //   this.http.get('../../assets/documents/subCategories.json').subscribe(data => {
+  //     retrievedData = data;
+  //     retrievedData.forEach(sub => {
+  //       if (sub.title === subcategory) {
+  //         sub.documents.forEach(doc => {
+  //           let document = doc;
+  //           document.subcategory = sub.title;
+  //           document.category = sub.category;
+  //           documents.push(doc);
+  //           console.log(doc);
+  //         });
+  //       }
+  //     });
+  //   });
+  //   return documents;
+  // }
+
+  // getDocumentByName(input) {
+  //   let retrievedData;
+  //   let documents = [];
+  //   this.http.get('../../assets/documents/subCategories.json').subscribe(data => {
+  //     retrievedData = data;
+  //     retrievedData.forEach(sub => {
+  //       sub.documents.forEach(doc => {
+  //         if (doc.title.includes(input)) {
+  //           let document = doc;
+  //           document.subcategory = sub.title;
+  //           document.category = sub.category;
+  //           documents.push(doc);
+  //           console.log(doc);
+  //         }
+  //       });
+  //     });
+  //   });
+  //   return documents;
+  // }
 
 
 }

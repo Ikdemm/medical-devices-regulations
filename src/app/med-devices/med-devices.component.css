@@ -4,21 +4,27 @@
 }
 
 label {
-  color: #fff;
+  color: #FFD000;
 }
 
 option {
   color: #fff;
 }
 
-.dropdown {
+/* ng-select.dropdown {
+  color: #FFD000 !important;
+  border: 1px solid #FFD000;
+  background-color: transparent !important;
+} */
+
+/* .dropdown {
   background-color: #000;
   color: #FFD000;
-  border: 1px solid #FFD000;
+  border: 1px solid ;
   border-radius: 0;
-}
+} */
 
-.submit-button {
+/* .submit-button {
   margin-top: 1.4em;
   width: 200px;  
   padding: 0;
@@ -33,7 +39,7 @@ option {
 .submit-button:hover {
   background-color: #000;
   color: #FFD000;
-}
+} */
 
 .cards-container {
   padding: 2em;
@@ -80,4 +86,21 @@ option {
   color: white;
   margin: 0.5em;
 }
-  
+
+.card {
+  border: solid 1px #000;
+  border-radius: 0%;
+}
+
+.card-header {
+  border-bottom: solid 1px #000;
+  border-top: solid 1px #000;
+  background-color: #000;
+  color: #FFD000;
+  border-radius: 0%;
+}
+
+.card-title {
+  color: #000;
+  font-size: 1.1em;
+}

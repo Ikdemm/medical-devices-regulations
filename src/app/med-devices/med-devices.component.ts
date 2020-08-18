@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DocumentService } from '../services/document.service';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router'
+// import { FormGroup, FormBuilder } from '@angular/forms';
+// import { Router, ActivatedRoute } from '@angular/router';
 import { saveAs } from 'file-saver';
+import { Document } from '../models/document';
 
 
 @Component({
@@ -12,62 +13,84 @@ import { saveAs } from 'file-saver';
 })
 export class MedDevicesComponent implements OnInit {
 
-  constructor(private documentService: DocumentService,
-              private formBuilder: FormBuilder) { }
+  constructor(private documentService: DocumentService
+              // private formBuilder: FormBuilder
+              ) { }
 
-  // selectedCountry;
-  // selectedCategory;
-  // categories;
-  // subcategories;
-  // selectedSubCategory;
-  documents;
+  
+  documentsLoaded = false;
 
-  countries = ["Europe", "Germany"];
+  selectedCountry: any;
+  selectedCategory: any;
+  selectedSubCategory: any;
 
-  documentsForm = this.formBuilder.group({
-    selectedCountry: [''],
-    selectedCategory: [''],
-    selectedSubCategory: ['']
-  })
+  categories = [];
+  subcategories = [];
+  documents = [];
+  countries = [];
 
-  // changedCategory() {
-  //   this.selectedCategory = this.documentsForm.get('selectedCategory').value;
-  //   this.subcategories = this.documentService.getSubCategories(this.selectedCategory);
-  //   console.log(this.subcategories);
-  // }
+  // countries: Array<Object> = [{"country": "Europe"}, {"country": "Germany"}];
 
-  // changedCountry() {
-  //   this.selectedCountry = this.documentsForm.get('selectedCountry').value;
-  //   this.categories = this.documentService.getCategories(this.selectedCountry);
-  // }
+  // documentsForm = this.formBuilder.group({
+  //   selectedCountry: [''],
+  //   selectedCategory: [''],
+  //   selectedSubCategory: ['']
+  // })
 
-  // onSubmit() {
-  //   console.log(JSON.stringify(this.documentsForm.value));
-  //   this.selectedSubCategory = this.documentsForm.get('selectedSubCategory').value;
-  //   this.getDocuments(this.selectedSubCategory);
-  //   console.log(this.documents);
-  // }
-
-  // getDocuments(subcategory) {
-  //   this.documents = this.documentService.getDocumentsBySubC(subcategory);
-  // }
-
-  // changedSubCategory() {
-  //   this.selectedSubCategory = this.documentsForm.get('selectedSubCategory').value;
-  // }
-
-  openfile(url) {
-    console.log(url);
-    saveAs(url, "file");
+  changedCountry() {
+    this.categories = this.selectedCountry["categories"];
+    this.selectedSubCategory = null;
+    this.selectedCategory = null;
+    this.reloadDocuments("country");
   }
 
-  getDocumentsByName(input) {
-    this.documents = this.documentService.getDocumentByName(input);
+  changedCategory() {
+    this.subcategories = this.selectedCategory["subcategories"];
+    this.selectedSubCategory = null;
+    this.reloadDocuments("category");
+  }
+
+  changedSubCategory() {
+    this.reloadDocuments("subcategory");
+  }
+
+  loadCountries() {
+    this.documentService.getCountries().subscribe((data: Array<Object>) => {
+      this.countries = [...data];
+      this.documentsLoaded = true;
+    });
+  }
+
+  loadDocuments() {
+    this.documentService.getDocuments().subscribe((data: Array<Document>) => {
+      this.documents = [...data];
+      console.log(this.documents);
+    })
+  }
+
+  reloadDocuments(condition) {
+    if (condition === "country") {
+      this.documentService.getDocuments().subscribe((data: Array<Document>) => {
+        this.documents = data.filter(document => document["country"] === this.selectedCountry["country"]);
+        console.log(this.documents);
+      });
+    } else if (condition === "category") {
+      this.documentService.getDocuments().subscribe((data: Array<Document>) => {
+        this.documents = data.filter(document => document["category"] === this.selectedCategory["name"]);
+        console.log(this.documents);
+      });
+    } else if (condition === "subcategory") {
+      this.documentService.getDocuments().subscribe((data: Array<Document>) => {
+        console.log(this.selectedSubCategory);
+        this.documents = data.filter(document => document["subcategory"] === this.selectedSubCategory["title"]);
+        console.log(this.documents);
+      });
+    }
   }
 
   ngOnInit() {
-    this.documents = this.documentService.getAllDocuments();
-    console.log(this.documents);
+    this.loadCountries();
+    this.loadDocuments();
   }
 
 }

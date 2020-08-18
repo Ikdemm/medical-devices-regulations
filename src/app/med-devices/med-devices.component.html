@@ -1,45 +1,52 @@
-<div class="form-container" width="100%">
-  <form [formGroup]="documentsForm" (ngSubmit)="onSubmit()">
-    <div class="form-row">
-      <!-- Country -->
-      <div class="form-group col-md-4">
-        <label for="country">Country</label>
-        <select formControlName="selectedCountry" id="country" class="form-control dropdown" (change)="changedCountry()">
-          <option value="" disabled>Choose ..</option>
-          <option *ngFor="let country of countries">{{country}}</option>
-        </select>
-      </div>
+<div class="form-container" width="100%" *ngIf="documentsLoaded">
+  <div class="form-row">
 
-      <!-- Category -->
-      <div class="form-group col-md-4">
-        <label for="category">Category</label>
-        <select formControlName="selectedCategory" id="category" class="form-control dropdown" (change)="changedCategory()">
-          <option value="" disabled>Choose ..</option>
-          <option *ngFor="let category of categories">{{category}}</option>
-        </select>
-      </div>
-
-      <!-- SubCategory -->
-      <div class="form-group col-md-4">
-        <label for="subcategory">Sub Category</label>
-        <select formControlName="selectedSubCategory" id="subcategory" class="form-control dropdown" (change)="changedSubCategory()">
-          <option value="" disabled>Choose ..</option>
-          <option *ngFor="let subcategory of subcategories">{{subcategory.title}}</option>
-        </select>
-      </div>
-
-      <!--<div class="col-md-3">
-        <button type="submit" class="btn btn-lg btn-block submit-button">Search</button>
-      </div>--> 
-
+    <!-- Country -->
+    <div class="col-md-4">
+      <label for="country">Country</label>
+      <ng-select
+      class="dropdown" 
+      [items]="countries"
+      bindLabel="country"
+      placeholder="Select a country"
+      (change)="changedCountry()"
+      [(ngModel)]="selectedCountry">
+      </ng-select>
     </div>
 
-  </form>
+    <!-- Category -->
+    <div class="col-md-4">
+      <label for="country">Category</label>
+      <ng-select
+      class="dropdown" 
+      [items]="categories"
+      bindLabel="name"
+      (change)="changedCategory()"
+      placeholder="Select a category"
+      [(ngModel)]="selectedCategory">
+      </ng-select>
+    </div>
+
+    <!-- SubCategory -->
+    <div class="col-md-4">
+      <label for="country">Subcategory</label>
+      <ng-select
+      class="dropdown" 
+      [items]="subcategories"
+      bindLabel="title"
+      (change)="changedSubCategory()"
+      placeholder="Select a subcategory"
+      [(ngModel)]="selectedSubCategory">
+      </ng-select>
+    </div>
+
+  </div>
+
 </div>
 
 <div class="cards-container">
   <div *ngFor="let document of documents">
-    <div class="card bg-light mb-4">
+    <div class="card mb-4">
       <div class="card-header">{{document.category}} - <b>{{document.subcategory}}</b></div>
       <div class="card-body">
         <h5 class="card-title">{{document.title}}</h5>
