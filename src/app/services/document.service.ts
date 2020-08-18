@@ -1,30 +1,48 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+
+import { Document } from '../models/document';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class DocumentService {
 
+  private _url = "../../assets/documents/plainDocuments.json";
+
   constructor(private http: HttpClient) { }
 
   getData() {
-    return this.http.get('../../assets/documents/documents.json');
+    return this.http.get(this._url);     
   }
 
-  getCountries() {
-    let retrievedData;
-    let countries = [];
-    this.http.get('../../assets/documents/documents.json').subscribe(data => {
-      retrievedData = data;
-      retrievedData.forEach(element => {
-        countries.push(element);
-      });
+  getAllDocuments() {
+    // let documents: Array<Document>;
+    let documents = [];
+    this.getData().subscribe((data: Array<Document>) => {
+      data.forEach(element => documents.push(element));
+      // documents = [...data];
     });
-    console.log(countries);
-    return countries;
+    return documents;
+  }
+
+  getDataByCountry(country) {
+    if (!country) {return this.getAllDocuments()}
+    let europe, germany;
+    this.http.get('../../assets/documents/documents.json').subscribe( (data: Array<Object>) => {
+      [
+        europe,
+        germany
+      ] = data;
+      return (country === "europe") ? europe : germany;
+    });
+  }
+
+  getCategoriesByCountry(country) {
+    let categories = this.getDataByCountry(country).map((element) => {return element['title']});
+    console.log(categories);
+    return categories;
   }
 
   getSubCategories(category) {
@@ -32,39 +50,17 @@ export class DocumentService {
     let subCategories = [];
     this.http.get('../../assets/documents/subCategories.json').subscribe(data => {
       retrievedData = data;
-      retrievedData.forEach(element => {
-          if (element.category === category) {
-            subCategories.push(element);
-          }
-        });
-      });
+      retrievedData.filer(element => element.category === category);
+    });
     return subCategories;
   }
 
   getCategories(country) {
-    let retrievedData;
     let categories = [];
-    this.http.get('../../assets/documents/categories.json').subscribe(data => {
-      retrievedData = data;
-      retrievedData.forEach(category => {
-        if (category.country === country) {
-            categories.push(category.name);
-          }
-        });
-      });
-    return categories;
-  }
-
-  getAllDocuments() {
-    let retrievedData;
-    let documents = [];
-    this.http.get('../../assets/documents/subCategories.json').subscribe(data => {
-      retrievedData = data;
-      retrievedData.forEach(element => {
-        documents.push(element);
-      });
+    this.http.get('../../assets/documents/categories.json').subscribe((data: Array<Object>) => {
+      categories = data.filter(category => category['country'] === country);
     });
-    return documents;
+    return categories;
   }
 
   getDocumentsBySubC(subcategory) {

@@ -11,9 +11,16 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 
+import { TrademarkComponent } from './trademark/trademark.component';
+import { HomeComponent } from './home/home.component';
+import { MedDevicesComponent } from './med-devices/med-devices.component';
+
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
+    TrademarkComponent,
+    MedDevicesComponent
   ],
   imports: [
     BrowserModule,

@@ -5,7 +5,9 @@
   <p class="home-text">We support you with the data you need. Choose the service you want to use</p>
   <div class="buttons-container">
     <div class="button1">
-      <button class="devices-button" (click)="goToDevices()">Medical Devices Documents</button>
+      <a routerLink='/medical-devices'>
+        <button class="devices-button">Medical Devices Documents</button>
+      </a>
     </div>
     <div class="button2">
       <button class="trademark-button" (click)="goToTrademark()">Establish your Trademark</button>
