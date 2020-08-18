@@ -1,58 +1,183 @@
 [
   {
     "name": "European directives / regulations / implementing regulations / implementing decisions / decisions / recommendations",
-    "country": "Europe"
+    "country": "Europe",
+    "subcategories": [
+      "Guidelines",
+      "Implementing decisions on the guidelines",
+      "Regulations",
+      "Implementing regulations on the regulations",
+      "Implementing decisions on the regulations",
+      "Decisions",
+      "Recommendations"
+    ]
   },
   {
     "name": "European manuals",
-    "country": "Europe"
+    "country": "Europe",
+    "subcategories": [
+      "Manuals"
+    ]
   },
   {
     "name": "Medical Device Coordination Group (MDCG)",
-    "country": "Europe"
+    "country": "Europe",
+    "subcategories": [
+      "UDI",
+      "EUDAMED",
+      "European Medical Device Nomenclature (EMDN)",
+      "Notified bodies",
+      "Clinical investigation and evaluation",
+      "New technologies",
+      "Other topics",
+      "Other guidance documents"
+    ]
   },
   {
     "name": "MEDDEV: Medical Device Guidance documents",
-    "country": "Europe"
+    "country": "Europe",
+    "subcategories": [
+      "Scope, field of application, definition",
+      "Essential requirements",
+      "Classification of MD",
+      "Conformity assessment procedure (General rules)",
+      "Conformity assessment procedure (Conformity assessment for particular groups of products)",
+      "Clinical investigation, clinical evaluation",
+      "Notified bodies",
+      "Post-Market surveillance",
+      "Transitional period",
+      "IVD",
+      "Other guidance"
+    ]
   },
   {
     "name": "Notified Body Operations Group (NBOG)",
-    "country": "Europe"
+    "country": "Europe",
+    "subcategories": [
+      "NBOG documents for medical device directives 90/385/EEC, 93/42/EEC and 98/79/EC",
+      "NBOG Checklists",
+      "NBOG Forms"
+    ]
   },
   {
     "name": "NB-MED Recommendations",
-    "country": "Europe"
+    "country": "Europe",
+    "subcategories": [
+      "Scope, field of application, explanation of terms",
+      "Essential Requirements",
+      "Conformity assessment procedures; General rules",
+      "Co4nformity assessment procedures; Quality assurance",
+      "Conformity assessment procedures; Verification of manufactured productsé",
+      "Conformity assessment for particular product groups",
+      "Clinical investigations, clinical evaluation",
+      "Market surveillance; vigilance",
+      "Transitional provisions",
+      "Other"
+    ]
   },
   {
     "name": "TEAM-NB – Position Papers",
-    "country": "Europe"
+    "country": "Europe",
+    "subcategories": [
+      "Documents 2020",
+      "Documents 2019"
+    ]
   },
   {
     "name": "IMDRF – International Medical Device Regulators Forum",
-    "country": "Europe"
+    "country": "Europe",
+    "subcategories": [
+      "Technical Documents",
+      "GHTF Study Group 1 - Final Documents – Pre-market Evaluation",
+      "GHTF Study Group 2 - Final Documents – Post-market Surveillance/Vigilance",
+      "GHTF Study Group 3 - Final Documents – Quality Systems",
+      "GHTF Study Group 4 - Final Documents – Auditing",
+      "GHTF Study Group 5 - Final Documents – Clinical Safety/Performance",
+      "GHTF Steering Committee – Procedural documents",
+      "GHTF Steering Committee – Technical Documents"
+    ]
   },
   {
     "name": "Europäische Richtlinien / Verordnungen / Durchführungsverordnungen / Durchführungsbeschlüsse / Entscheidungen / Empfehlungen",
-    "country": "Germany"
+    "country": "Germany",
+    "subcategories": [
+      "Richtlinien",
+      "Durchführungsbeschlüsse zu den Richtlinien",
+      "Verordnungen",
+      "Durchführungsverordnungen zu den Verordnungen",
+      "Durchführungsbeschlüsse zu den Verordnungen",
+      "Entscheidungen",
+      "Empfehlungen"
+    ]
   },
   {
     "name": "Deutsches Medizinprodukte-Recht",
-    "country": "Germany"
+    "country": "Germany",
+    "subcategories": [
+      "Deutsches Medizinprodukte-Recht"
+    ]
   },
   {
     "name": "Nationaler Arbeitskreis (NAKI)",
-    "country": "Germany"
+    "country": "Germany",
+    "subcategories": [
+      "Untergruppe 1 (Übergangsbestimmungen)",
+      "Untergruppe 2 (Benannte Stellen)",
+      "Untergruppe 3 (Herstellerpflichten)",
+      "Untergruppe 4 (Marktüberwachung)",
+      "Untergruppe 5 (Teil: Klassifizierung/Abgrenzung)",
+      "Untergruppe 5 (Teil: Vigilanzsystem)",
+      "Untergruppe 6 (klinische Bewertung/klinische Prüfung)",
+      "Untergruppe 7 (Aufbereitung)"
+    ]
   },
   {
     "name": "ZLG - Antworten und Beschlüsse des Erfahrungsaustauschkreises der benannten Stellen (EK-Med)",
-    "country": "Germany"
+    "country": "Germany",
+    "subcategories": [
+      "Begriffsbestimmungen -Artikel 1",
+      "In Verkehrbringen, Inbetriebnahme Artikel 2",
+      "Grundlegende Anforderungen - Artikel 3 und Anhang I",
+      "Produkte für besondere Zwecke - Artikel 4 und Anhang VIII",
+      "Normen und technische Vorschriften - Artikel 5",
+      "Klassifizierung - Artikel 9 und Anhang IX",
+      "Vorkommnisse nach dem Inverkehrbringen - Artikel 10",
+      "Konformitätsbewertung - Artikel 11 und Anhänge II bis VII",
+      "EG-Auslegungsprüfung (Anhang II Abs. 4)",
+      "EG-Konformitätserklärung – Vollständiges Qualitätssicherungssystem (Anhang II)",
+      "EG-Baumusterprüfung (Anhang III)",
+      "Überprüfung der hergestellten Produkte (98/79/EG Anhang II Liste A)",
+      "Systeme und Behandlungseinheiten – Artikel 12",
+      "Klinische Prüfung, klinische Bewertung – Artikel 15 und Anhang X",
+      "Benannte Stellen – Artikel 16 und Anhang XI",
+      "CE-Kennzeichnung – Artikel 17 und Anhang XII",
+      "Errichten, Betreiben und Anwenden",
+      "Sicherheitsbeauftragter",
+      "Zuständige Behörden"
+    ]
   },
   {
     "name": "ZLG - Antworten und Beschlüsse der Horizontalen Arbeitskomitees (HAK)",
-    "country": "Germany"
+    "country": "Germany",
+    "subcategories": [
+      "HAK1 – Horizontales Arbeitskomitee Biologische Prüfungen",
+      "Genotoxizität",
+      "Konformitätsbewertung",
+      "Zytotoxizität",
+      "HAK3 – Horizontales Arbeitskomitee Reinigung, Desinfektion und Sterilisation",
+      "Reinigung und Desinfektion",
+      "Sterilisation"
+    ]
   },
   {
     "name": "ZLG – Dokumente AGMP",
-    "country": "Germany"
+    "country": "Germany",
+    "subcategories": [
+      "FEG 1 – Fachexpertengruppe 1 - Qualitätssicherung",
+      "FEG 2 – Fachexpertengruppe 2 - Inverkehrbringen",
+      "FEG 3 – Fachexpertengruppe 3 - Klinische Prüfung",
+      "FEG 4 – Fachexpertengruppe 4 - Betreiben und Anwenden",
+      "FEG 5 – Fachexpertengruppe 5 - Hygienische Aufbereitung"
+    ]
   }
 ]
