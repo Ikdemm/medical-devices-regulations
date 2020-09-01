@@ -2,15 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-
-import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 import { TrademarkComponent } from './trademark/trademark.component';
 import { HomeComponent } from './home/home.component';
@@ -30,8 +28,6 @@ import { MedDevicesComponent } from './med-devices/med-devices.component';
     AngularFontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
-    PdfViewerModule,
     NgSelectModule
   ],
   providers: [],
