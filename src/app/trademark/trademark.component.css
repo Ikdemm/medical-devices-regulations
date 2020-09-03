@@ -1,0 +1,91 @@
+* {
+    font-family: 'Source Sans Pro', "Roboto", sans-serif;
+}
+
+.form-container {
+    padding: 1em 3em;
+    background-color: rgb(245, 245, 245);
+}
+
+.form-header {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.header-container {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    background-color: #000;
+    padding-top: 0.5em;
+    padding-bottom: 0.3em;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-bottom: 1em;
+}
+
+.section-header {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 900;
+}
+
+.collapse-button {
+    cursor: pointer;
+}
+
+.collapse-button:hover {
+    color: #FFD000;
+}
+
+.subform-container {
+    padding: 1em;
+}
+
+.form-row {
+    display: flex;
+    align-content: space-between;
+    flex-wrap: wrap;
+    gap: 3.3%;
+}
+
+.form-group {
+    margin-bottom: 1em;
+}
+
+.text-input {
+    width: 31%;
+}
+
+label {
+    font-weight: bold;
+    color: #000;
+}
+
+input {
+    border: solid 2px #000;
+    border-radius: 0;
+}
+
+.submit-button {
+    padding: 0.2em 3em;
+    font-weight: 800;
+    font-size: 1.7em;
+    color: #FFF;
+    text-transform: uppercase;
+    background-color: #000;
+    cursor: pointer;
+}
+
+.checkbox-input {
+    border: solid 1px #000;
+}
+
+.submit-button:hover {
+    font-weight: 800;
+    font-size: 1.7em;
+    color: #000;
+    background-color: #fff;
+    border: 2px solid #000;
+}
+

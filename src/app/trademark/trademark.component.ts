@@ -9,7 +9,15 @@ export class TrademarkComponent implements OnInit {
 
   constructor() { }
 
+  applicantForm = true;
+  agentForm = true;
+  contactForm = true;
+
   ngOnInit() {
   }
+
+  showApplicantForm() { this.applicantForm = !this.applicantForm; }
+  showAgentForm() { this.agentForm = !this.agentForm; }
+  showContactForm() { this.contactForm = !this.contactForm; }
 
 }
