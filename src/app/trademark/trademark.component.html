@@ -4,7 +4,7 @@
 
 <div class="form-container">
 
-    <form (ngSubmit)="onSubmit()" #tf="ngForm">
+    <form (ngSubmit)="onSubmit(tf)" #tf="ngForm">
 
         <!-- Applicant -->
         
@@ -20,43 +20,39 @@
             <div class="form-row">
 
                 <!-- First Name -->
-                <div class="form-group text-input text-input">
+                <div class="text-input text-input">
                     <label for="applicantFirstName">Prénom</label>
-                    <input type = "text" class="form-control" id="applicantFirstName"
-                        required
-                        [(ngModel)]="tf.applicantFirstName" name="applicantFirstName"
-                        #applicantFirstName = "ngModel">
-                    <!-- <div [hidden]="applicantFirstName.valid" class="alert alert-danger">ApplicantFirstName is required</div>  -->
+                    <input type="text" class="form-control" id="applicantFirstName" name="applicantFirstName" required ngModel>
                 </div>
 
                 <!-- Last Name -->
-                <div class="form-group text-input">
+                <div class="text-input">
                     <label for="applicantLastName">Nom</label>
-                    <input type = "text" class="form-control" id="applicantLastName" name="applicantLastName">
+                    <input type="text" class="form-control" id="applicantLastName" name="applicantLastName" required ngModel>
                 </div>
 
                 <!-- Social Reason -->
-                <div class="form-group text-input">
+                <div class="text-input">
                     <label for="applicantSocialReason">Raison sociale</label>
-                    <input type = "text" class="form-control" id="applicantSocialReason" name="applicantSocialReason">
+                    <input type="text" class="form-control" id="applicantSocialReason" name="applicantSocialReason" required ngModel>
                 </div>
 
                 <!-- Address -->
-                <div class="form-group text-input">
+                <div class="text-input">
                     <label for="applicantAddress">Adresse</label>
-                    <input type = "text" class="form-control" id="applicantAddress" name="applicantAddress">
+                    <input type="text" class="form-control" id="applicantAddress" name="applicantAddress" required ngModel>
                 </div>
 
                 <!-- Post code -->
-                <div class="form-group text-input">
+                <div class="text-input">
                     <label for="applicantPostCode">Code Postal</label>
-                    <input type = "text" class="form-control" id="applicantPostCode" name="applicantPostCode">
+                    <input type="text" class="form-control" id="applicantPostCode" name="applicantPostCode" required ngModel>
                 </div>
 
                 <!-- Location -->
-                <div class="form-group text-input">
+                <div class="text-input">
                     <label for="applicantLocation">Localité</label>
-                    <input type = "text" class="form-control" id="applicantLocation" name="applicantLocation">
+                    <input type="text" class="form-control" id="applicantLocation" name="applicantLocation" required ngModel>
                 </div>
 
             </div>
@@ -77,43 +73,40 @@
             <div class="form-row">
 
                 <!-- First Name -->
-                <div class="form-group text-input">
+                <div class="text-input">
                     <label for="agentFirstName">Prénom</label>
-                    <input type = "text" class="form-control" id="agentFirstName"
-                        required
-                        [(ngModel)]="tf.agentFirstName" name="agentFirstName"
-                        #agentFirstName = "ngModel">
+                    <input type = "text" class="form-control" id="agentFirstName" name="agentFirstName" required ngModel>
                     <!-- <div [hidden]="agentFirstName.valid" class="alert alert-danger">agentFirstName is required</div>  -->
                 </div>
     
                 <!-- Last Name -->
-                <div class="form-group text-input">
+                <div class="text-input">
                     <label for="agentLastName">Nom</label>
-                    <input type = "text" class="form-control" id="agentLastName" name="agentLastName">
+                    <input type = "text" class="form-control" id="agentLastName" name="agentLastName" required ngModel>
                 </div>
     
                 <!-- Social Reason -->
-                <div class="form-group text-input">
+                <div class="text-input">
                     <label for="agentSocialReason">Raison sociale</label>
-                    <input type = "text" class="form-control" id="agentSocialReason" name="agentSocialReason">
+                    <input type = "text" class="form-control" id="agentSocialReason" name="agentSocialReason" required ngModel>
                 </div>
     
                 <!-- Address -->
-                <div class="form-group text-input">
+                <div class="text-input">
                     <label for="agentAddress">Adresse</label>
-                    <input type = "text" class="form-control" id="agentAddress" name="agentAddress">
+                    <input type = "text" class="form-control" id="agentAddress" name="agentAddress" required ngModel>
                 </div>
     
                 <!-- Post code -->
-                <div class="form-group text-input">
+                <div class="text-input">
                     <label for="agentPostCode">Code Postal</label>
-                    <input type = "text" class="form-control" id="agentPostCode" name="agentPostCode">
+                    <input type = "text" class="form-control" id="agentPostCode" name="agentPostCode" required ngModel>
                 </div>
     
                 <!-- Location -->
-                <div class="form-group text-input">
+                <div class="text-input">
                     <label for="agentLocation">Localité</label>
-                    <input type = "text" class="form-control" id="agentLocation" name="agentLocation">
+                    <input type = "text" class="form-control" id="agentLocation" name="agentLocation" required ngModel>
                 </div>
     
             </div>
@@ -137,40 +130,37 @@
             <div class="form-row">
 
                 <!-- First Name -->
-                <div class="form-group text-input">
+                <div class="text-input">
                     <label for="contactFirstName">Prénom</label>
-                    <input type = "text" class="form-control" id="contactFirstName"
-                        required
-                        [(ngModel)]="tf.contactFirstName" name="contactFirstName"
-                        #contactFirstName = "ngModel">
+                    <input type = "text" class="form-control" id="contactFirstName" name="contactFirstName" required ngModel>
                     <!-- <div [hidden]="contactFirstName.valid" class="alert alert-danger">contactFirstName is required</div>  -->
                 </div>
     
                 <!-- Last Name -->
-                <div class="form-group text-input">
+                <div class="text-input">
                     <label for="contactLastName">Nom</label>
-                    <input type = "text" class="form-control" id="contactLastName" name="contactLastName">
+                    <input type = "text" class="form-control" id="contactLastName" name="contactLastName" required ngModel>
                 </div>
     
                 <!-- Social Reason -->
-                <div class="form-group text-input">
+                <div class="text-input">
                     <label for="contactPhone">Téléphone</label>
-                    <input type = "text" class="form-control" id="contactPhone" name="contactPhone">
+                    <input type = "text" class="form-control" id="contactPhone" name="contactPhone" required ngModel>
                 </div>
 
                 <!-- Application number -->
-                <div class="form-group" style="width: 100%;">
+                <div class="" style="width: 100%;">
                     <label for="appNumber">Numéro de référence, dossier</label>
-                    <input type = "text" class="form-control" id="appNumber" name="appNumber">
+                    <input type = "text" class="form-control" id="appNumber" name="appNumber" required ngModel>
                 </div>
 
                 <!-- Digital Communication -->
-                <div class="form-group">
-                    <input type="checkbox" class="checkbox-input" id="providedEmail" name="providedEmail">
+                <div class="">
+                    <input type="checkbox" class="checkbox-input" id="providedEmail" name="providedEmail" ngModel>
                     <label for="providedEmail">Dans la présente procédure, je souhaite recevoir les écrits de l’IPI par voie électronique à l’adresse suivante*:</label>
                 </div>
-                <div class="form-group" style="width: 100%;">
-                    <input type="text" class="form-control" name="email" id="email">
+                <div class="" style="width: 100%;">
+                    <input type="text" class="form-control" name="email" id="email" ngModel>
                 </div>
                 <p class="input-hint">* L’adresse indiquée doit être enregistrée sur une plateforme de messagerie reconnue pour transmettre par voie électronique des documents dans le cadre d’une procédure administrative
                     fédérale. Pour plus d’informations: www.ipi.ch/communication-electronique.</p>
@@ -200,18 +190,18 @@
             <p class="form-paragraph-important">
                 Dimensions maximales de la reproduction: 80 × 80 mm. 
             </p>
-            <div class="form-group">
-                <input type="checkbox" class="checkbox-input" id="traditionalBrand" name="traditionalBrand">
+            <div class="">
+                <input type="checkbox" class="checkbox-input" id="traditionalBrand" name="traditionalBrand" ngModel>
                 <label for="traditionalBrand">Marque tridimensionnelle</label>
-                <input type="checkbox" class="checkbox-input" id="acousticBrand" name="acousticBrand">
+                <input type="checkbox" class="checkbox-input" id="acousticBrand" name="acousticBrand" ngModel>
                 <label for="acousticBrand">Marque acoustique</label>
-                <input type="checkbox" class="checkbox-input" id="colorBrand" name="colorBrand">
+                <input type="checkbox" class="checkbox-input" id="colorBrand" name="colorBrand" ngModel>
                 <label for="colorBrand">Marque avec revendication de couleur</label>
-                <input type="checkbox" class="checkbox-input" id="abstractBrand" name="abstractBrand">
+                <input type="checkbox" class="checkbox-input" id="abstractBrand" name="abstractBrand" ngModel>
                 <label for="abstractBrand">Marque de couleur (abstraite)</label>
-                <input type="checkbox" class="checkbox-input" id="otherBrand" name="otherBrand">
+                <input type="checkbox" class="checkbox-input" id="otherBrand" name="otherBrand" ngModel>
                 <label for="otherBrand">Autres</label>
-                <input type="text" class="form-control" name="other" id="other" placeholder="Autres">
+                <input type="text" class="form-control" name="other" id="other" placeholder="Autres" ngModel>
             </div>
             <input type="file" name="brandFile" id="brandFile" class="form-control file-input">        
         </div>
@@ -233,33 +223,33 @@
             <p class="form-paragraph-important">
                 Taxes de dépôt
             </p>
-            <div class="form-group">
-                <input type="checkbox" class="checkbox-input" id="depositTaxCheck" name="depositTaxCheck">
+            <div class="">
+                <input type="checkbox" class="checkbox-input" id="depositTaxCheck" name="depositTaxCheck" ngModel>
                 <label for="depositTax">CHF</label>
-                <input type="number" class="sum-input" name="depositTax" id="depositTax"> à nous facturer.
+                <input type="number" class="sum-input" name="depositTax" id="depositTax" ngModel> à nous facturer.
             </div>
-            <div class="form-group">
-                <input type="checkbox" class="checkbox-input" id="depositSumCheck" name="depositSumCheck">
+            <div class="">
+                <input type="checkbox" class="checkbox-input" id="depositSumCheck" name="depositSumCheck" ngModel>
                 <label for="depositSumCheck">CHF</label>
-                <input type="number" class="sum-input" name="depositSum" id="depositSum">
+                <input type="number" class="sum-input" name="depositSum" id="depositSum" ngModel>
                 à débiter de notre compte courant nº
-                <input type="number" class="sum-input" name="depositAccount" id="depositAccount">
+                <input type="number" class="sum-input" name="depositAccount" id="depositAccount" ngModel>
                 auprès de l’IPI.
             </div>
             <p class="form-paragraph-important">
                 Surtaxe pour classe supplémentaire
             </p>
-            <div class="form-group">
-                <input type="checkbox" class="checkbox-input" id="additionalTaxCheck" name="additionalTaxCheck">
+            <div class="">
+                <input type="checkbox" class="checkbox-input" id="additionalTaxCheck" name="additionalTaxCheck" ngModel>
                 <label for="additionalTaxCheck">CHF</label>
-                <input type="number" class="sum-input" name="additionalSum" id="additionalSum"> à nous facturer.
+                <input type="number" class="sum-input" name="additionalSum" id="additionalSum" ngModel> à nous facturer.
             </div>
-            <div class="form-group">
-                <input type="checkbox" class="checkbox-input" id="additionalTaxCheck" name="additionalTaxCheck">
+            <div class="">
+                <input type="checkbox" class="checkbox-input" id="additionalTaxCheck" name="additionalTaxCheck" ngModel>
                 <label for="additionalTaxCheck">CHF</label>
-                <input type="number" class="sum-input" name="depositTax" id="depositTax">
+                <input type="number" class="sum-input" name="depositTax" id="depositTax" ngModel>
                 à débiter de notre compte courant nº
-                <input type="number" class="sum-input" name="depositAccount" id="depositAccount">
+                <input type="number" class="sum-input" name="depositAccount" id="depositAccount" ngModel>
                 auprès de l’IPI.
             </div>
         </div>
@@ -288,11 +278,11 @@
                 n’est toutefois pas valable pour la classe 45, dont les intitulés de classe sont formulés de manière trop
                 générale. Pour cette classe, l’IPI devra exiger des précisions.
             </p>
-            <div class="form-group">
-                <textarea id="products" name="products" class="form-control" rows="7" cols="33"></textarea>
+            <div class="">
+                <textarea id="products" name="products" class="form-control" rows="7" cols="33" ngModel></textarea>
             </div>
             <label for="productsfile">Voir feuille séparée </label>
-            <input type="file" name="productsfile" id="productsfile" class="form-control file-input">
+            <input type="file" name="productsfile" id="productsfile" class="form-control file-input" ngModel>
         </div>
 
         <!-- Brand Category -->
@@ -313,12 +303,12 @@
                 Veuillez marquer d’une croix ce qui convient. A défaut d’indication, la marque sera considérée comme
                 une marque individuelle.
             </p>
-            <div class="form-group">
-                <input type="checkbox" class="checkbox-input" id="individualBrand" name="individualBrand">
+            <div class="">
+                <input type="checkbox" class="checkbox-input" id="individualBrand" name="individualBrand" ngModel>
                 <label for="individualBrand">Marque individuelle</label>
-                <input type="checkbox" class="checkbox-input" id="waranthyBrand" name="waranthyBrand">
+                <input type="checkbox" class="checkbox-input" id="waranthyBrand" name="waranthyBrand" ngModel>
                 <label for="waranthyBrand">Marque de garantie</label>
-                <input type="checkbox" class="checkbox-input" id="collectiveBrand" name="collectiveBrand">
+                <input type="checkbox" class="checkbox-input" id="collectiveBrand" name="collectiveBrand" ngModel>
                 <label for="collectiveBrand">Marque collective</label>
             </div>
         </div>
@@ -340,11 +330,11 @@
             <p class="form-paragraph">
                 Selon la convention de l’Union de Paris
             </p>
-            <div class="form-group">
+            <div class="">
                 <label for="country">Pays</label>
-                <input type="text" class="form-control" name="country" id="country">
+                <input type="text" class="form-control" name="country" id="country" ngModel>
                 <label for="depositDate">Date du premier dépôt</label>
-                <input type="date" class="form-control" name="depositDate" id="depositDate">
+                <input type="date" class="form-control" name="depositDate" id="depositDate" ngModel>
             </div>
             <p class="form-paragraph">
                 Si une priorité partielle est revendiquée, il faut préciser sur quels produits et/ou services elle porte
@@ -366,7 +356,7 @@
         </div>
 
         <div class="subform-container" *ngIf="colorsForm">
-            <textarea id="colors" name="colors" class="form-control" rows="7" cols="33"></textarea>
+            <textarea id="colors" name="colors" class="form-control" rows="7" cols="33" ngModel></textarea>
         </div>
 
         <!-- Notes -->
@@ -383,7 +373,7 @@
         </div>
 
         <div class="subform-container" *ngIf="notesForm">
-            <textarea id="notes" name="notes" class="form-control" rows="7" cols="33"></textarea>
+            <textarea id="notes" name="notes" class="form-control" rows="7" cols="33" ngModel></textarea>
         </div>
 
         <!-- Appendings -->
@@ -401,21 +391,21 @@
 
         <div class="subform-container" *ngIf="appendingsForm">
 
-            <input type="checkbox" class="checkbox-input" id="annexe1Check" name="annexe1Check">
+            <input type="checkbox" class="checkbox-input" id="annexe1Check" name="annexe1Check" ngModel>
             <label for="annexe1">Annexe 1</label>
-            <input type="file" class="sum-input" name="annexe1" id="annexe1">
+            <input type="file" class="sum-input" name="annexe1" id="annexe1" ngModel>
 
-            <input type="checkbox" class="checkbox-input" id="annexe2Check" name="annexe2Check">
+            <input type="checkbox" class="checkbox-input" id="annexe2Check" name="annexe2Check" ngModel>
             <label for="annexe2">Annexe 2</label>
-            <input type="file" class="sum-input" name="annexe2" id="annexe2">
+            <input type="file" class="sum-input" name="annexe2" id="annexe2" ngModel>
 
-            <input type="checkbox" class="checkbox-input" id="annexe3Check" name="annexe3Check">
+            <input type="checkbox" class="checkbox-input" id="annexe3Check" name="annexe3Check" ngModel>
             <label for="annexe3">Annexe 3</label>
-            <input type="file" class="sum-input" name="annexe3" id="annexe3">
+            <input type="file" class="sum-input" name="annexe3" id="annexe3" ngModel>
 
-            <input type="checkbox" class="checkbox-input" id="annexe4Check" name="annexe4Check">
+            <input type="checkbox" class="checkbox-input" id="annexe4Check" name="annexe4Check" ngModel>
             <label for="annexe4">Annexe 4</label>
-            <input type="file" class="sum-input" name="annexe4" id="annexe4">
+            <input type="file" class="sum-input" name="annexe4" id="annexe4" ngModel>
 
         </div>
 
@@ -433,18 +423,18 @@
         </div>
 
         <div class="subform-container" *ngIf="signatureForm">
-            <div class="form-group">
+            <div class="">
                 <label for="signature">Date</label>
-                <input type="date" class="sum-input" name="signingDate" id="signingDate">
+                <input type="date" class="sum-input" name="signingDate" id="signingDate" ngModel>
 
                 <label for="signature">Digital Signature</label>
-                <input type="file" class="sum-input" name="signature" id="signature">
+                <input type="file" class="sum-input" name="signature" id="signature" ngModel>
             </div>
         </div>
         
         <hr>
         
-        <button type="submit" class="submit-button" [disabled]="!tf.form.valid">Submit</button>
+        <input type="submit" class="submit-button" value="Générer PDF">
 
     </form>
 </div>

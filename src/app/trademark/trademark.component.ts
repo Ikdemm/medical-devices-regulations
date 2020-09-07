@@ -1,4 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { PdfGeneratorService } from "src/app/services/pdf-generator.service";
+
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+import { ɵAnimationGroupPlayer } from '@angular/animations';
+
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
   selector: 'app-trademark',
@@ -7,7 +15,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrademarkComponent implements OnInit {
 
-  constructor() { }
+  constructor(private pdfGenerator: PdfGeneratorService) { }  
+
+  tf: FormGroup;
 
   applicantForm = true;
   agentForm = true;
@@ -22,9 +32,6 @@ export class TrademarkComponent implements OnInit {
   appendingsForm = true;
   signatureForm = true;
 
-  ngOnInit() {
-  }
-
   showApplicantForm() { this.applicantForm = !this.applicantForm; }
   showAgentForm() { this.agentForm = !this.agentForm; }
   showContactForm() { this.contactForm = !this.contactForm; }
@@ -38,4 +45,16 @@ export class TrademarkComponent implements OnInit {
   showAppendingsForm() { this.appendingsForm = !this.appendingsForm; }
   showSignatureForm() { this.signatureForm = !this.signatureForm; }
 
+  onSubmit(tf) {
+    console.log(tf.value);
+    this.generatePdf(tf.value);
+  }
+
+  generatePdf(form){
+    const documentDefinition = this.pdfGenerator.fillPDF(form) 
+      pdfMake.createPdf(documentDefinition).open();
+   }
+  
+  ngOnInit() {
+  }
 }
