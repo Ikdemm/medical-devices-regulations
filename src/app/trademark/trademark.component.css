@@ -2,17 +2,28 @@
     font-family: 'Source Sans Pro', "Roboto", sans-serif;
 }
 
+.page-container {
+    background-image: url('src/assets/images/brand.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 15em;
+    padding-bottom: 15em;
+}
+
 .form-container {
     padding: 1em 3em;
     background-color: rgb(245, 245, 245);
 }
 
-.form-header {
+.page-header {
     text-transform: uppercase;
     text-align: center;
+    font-size: 3em;
+    font-weight: 900;
+    color: #fff;
 }
 
-.header-container {
+.formheader-container {
     margin-top: 1em;
     display: flex;
     justify-content: space-between;
@@ -67,6 +78,43 @@ input {
     border-radius: 0;
 }
 
+.checkbox-input {
+    border: solid 1px #000;
+    width: 1em;
+    height: 1em;
+    margin-right: 1em;
+    margin-left: 1em;
+    margin-top: 0.5em;
+}
+
+.input-hint {
+    color: rgb(98, 98, 98);
+}
+
+.form-paragraph {
+    color: rgb(98, 98, 98);
+    font-size: 1.3em;
+}
+
+.form-paragraph-important {
+    color: #000;
+    font-weight: 700;
+}
+
+.file-input {
+    border: 0;
+    background: transparent;
+}
+
+.sum-input {
+    margin-left: 2em;
+    margin-right: 1em;
+}
+
+textarea {
+    border: solid 2px #000;
+}
+
 .submit-button {
     padding: 0.2em 3em;
     font-weight: 800;
@@ -75,10 +123,6 @@ input {
     text-transform: uppercase;
     background-color: #000;
     cursor: pointer;
-}
-
-.checkbox-input {
-    border: solid 1px #000;
 }
 
 .submit-button:hover {

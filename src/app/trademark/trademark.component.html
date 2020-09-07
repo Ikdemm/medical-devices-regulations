@@ -1,10 +1,14 @@
+<div class="page-container">
+    <h1 class="page-header">Enregistrement d’une marque suisse</h1>    
+</div>
+
 <div class="form-container">
-    <h1 class="form-header">Enregistrement d’une marque suisse</h1>
+
     <form (ngSubmit)="onSubmit()" #tf="ngForm">
 
         <!-- Applicant -->
         
-        <div class="header-container">
+        <div class="formheader-container">
             <h3 class="section-header">Déposant</h3>
             <a (click)="showApplicantForm()">
                 <h3 class="section-header collapse-button">+</h3>
@@ -61,7 +65,7 @@
 
         <!-- Agent -->
 
-        <div class="header-container">
+        <div class="formheader-container">
             <h3 class="section-header">Mandataire</h3>
             <a (click)="showAgentForm()">
                 <h3 class="section-header collapse-button">+</h3>
@@ -118,8 +122,8 @@
         
         <!-- Contact -->
 
-        <div class="header-container">
-            <div class="section-header-container">
+        <div class="formheader-container">
+            <div class="section-formheader-container">
                 <h3 class="section-header">Personne à contacter</h3>
             </div>
             <div class="collapse-button-container">
@@ -159,32 +163,286 @@
                     <label for="appNumber">Numéro de référence, dossier</label>
                     <input type = "text" class="form-control" id="appNumber" name="appNumber">
                 </div>
-    
+
+                <!-- Digital Communication -->
+                <div class="form-group">
+                    <input type="checkbox" class="checkbox-input" id="providedEmail" name="providedEmail">
+                    <label for="providedEmail">Dans la présente procédure, je souhaite recevoir les écrits de l’IPI par voie électronique à l’adresse suivante*:</label>
+                </div>
+                <div class="form-group" style="width: 100%;">
+                    <input type="text" class="form-control" name="email" id="email">
+                </div>
+                <p class="input-hint">* L’adresse indiquée doit être enregistrée sur une plateforme de messagerie reconnue pour transmettre par voie électronique des documents dans le cadre d’une procédure administrative
+                    fédérale. Pour plus d’informations: www.ipi.ch/communication-electronique.</p>
             </div>
+    
         </div>
 
-        <!-- Digital Communication -->
-
-        <div class="header-container">
-            <div class="section-header-container">
-                <h3 class="section-header">Communication électronique</h3>
+        <!-- Brand -->
+        
+        <div class="formheader-container">
+            <div class="section-formheader-container">
+                <h3 class="section-header">Marque</h3>
             </div>
             <div class="collapse-button-container">
-                <a (click)="showContactForm()">
+                <a (click)="showBrandForm()">
                     <h3 class="section-header collapse-button">+</h3>
                 </a>
             </div>            
-        </div>      
+        </div>
         
-        <div class="subform-container" *ngIf="agentForm">
+        <div class="subform-container" *ngIf="brandForm">
+            <p class="form-paragraph">
+                S’il s’agit d’une marque présentant une police de caractère particulière ou faisant intervenir un graphisme
+                particulier, veuillez déposer une reproduction en noir et blanc (à insérer ou coller ci-contre). Les zones grises doivent apparaître distinctement.
+                Pour les marques en couleur(s) (voir ch. 9 couleurs revendiquées), veuillez déposer une reproduction en couleur(s).
+            </p>
+            <p class="form-paragraph-important">
+                Dimensions maximales de la reproduction: 80 × 80 mm. 
+            </p>
             <div class="form-group">
-                <!-- <label for="email">Nom</label> -->
-                <input type="checkbox" class="form-control checkbox-input" id="providedEmail" name="providedEmail">
-                <label for="providedEmail">Dans la présente procédure, je souhaite recevoir les écrits de l’IPI par voie électronique à l’adresse suivante*:</label>
-                <input type="text" name="email" id="email">
+                <input type="checkbox" class="checkbox-input" id="traditionalBrand" name="traditionalBrand">
+                <label for="traditionalBrand">Marque tridimensionnelle</label>
+                <input type="checkbox" class="checkbox-input" id="acousticBrand" name="acousticBrand">
+                <label for="acousticBrand">Marque acoustique</label>
+                <input type="checkbox" class="checkbox-input" id="colorBrand" name="colorBrand">
+                <label for="colorBrand">Marque avec revendication de couleur</label>
+                <input type="checkbox" class="checkbox-input" id="abstractBrand" name="abstractBrand">
+                <label for="abstractBrand">Marque de couleur (abstraite)</label>
+                <input type="checkbox" class="checkbox-input" id="otherBrand" name="otherBrand">
+                <label for="otherBrand">Autres</label>
+                <input type="text" class="form-control" name="other" id="other" placeholder="Autres">
+            </div>
+            <input type="file" name="brandFile" id="brandFile" class="form-control file-input">        
+        </div>
+
+        <!-- Taxes -->
+        
+        <div class="formheader-container">
+            <div class="section-formheader-container">
+                <h3 class="section-header">Taxes</h3>
+            </div>
+            <div class="collapse-button-container">
+                <a (click)="showTaxForm()">
+                    <h3 class="section-header collapse-button">+</h3>
+                </a>
+            </div>            
+        </div>
+
+        <div class="subform-container" *ngIf="taxForm">
+            <p class="form-paragraph-important">
+                Taxes de dépôt
+            </p>
+            <div class="form-group">
+                <input type="checkbox" class="checkbox-input" id="depositTaxCheck" name="depositTaxCheck">
+                <label for="depositTax">CHF</label>
+                <input type="number" class="sum-input" name="depositTax" id="depositTax"> à nous facturer.
+            </div>
+            <div class="form-group">
+                <input type="checkbox" class="checkbox-input" id="depositSumCheck" name="depositSumCheck">
+                <label for="depositSumCheck">CHF</label>
+                <input type="number" class="sum-input" name="depositSum" id="depositSum">
+                à débiter de notre compte courant nº
+                <input type="number" class="sum-input" name="depositAccount" id="depositAccount">
+                auprès de l’IPI.
+            </div>
+            <p class="form-paragraph-important">
+                Surtaxe pour classe supplémentaire
+            </p>
+            <div class="form-group">
+                <input type="checkbox" class="checkbox-input" id="additionalTaxCheck" name="additionalTaxCheck">
+                <label for="additionalTaxCheck">CHF</label>
+                <input type="number" class="sum-input" name="additionalSum" id="additionalSum"> à nous facturer.
+            </div>
+            <div class="form-group">
+                <input type="checkbox" class="checkbox-input" id="additionalTaxCheck" name="additionalTaxCheck">
+                <label for="additionalTaxCheck">CHF</label>
+                <input type="number" class="sum-input" name="depositTax" id="depositTax">
+                à débiter de notre compte courant nº
+                <input type="number" class="sum-input" name="depositAccount" id="depositAccount">
+                auprès de l’IPI.
             </div>
         </div>
 
+        <!-- Services / Products -->
+        
+        <div class="formheader-container">
+            <div class="section-formheader-container">
+                <h3 class="section-header">Liste de produits et/ou services</h3>
+            </div>
+            <div class="collapse-button-container">
+                <a (click)="showProductForm()">
+                    <h3 class="section-header collapse-button">+</h3>
+                </a>
+            </div>            
+        </div>
+
+        <div class="subform-container" *ngIf="productForm">
+            <p class="form-paragraph">
+                Veuillez indiquer les produits ou les services au moyen de la terminologie et dans l’ordre de la
+                classification internationale. Nous vous recommandons d’utiliser la liste «Classification internationale
+                des produits et services» mise à disposition par l’IPI ainsi que la base de données en ligne sous
+                https://wdl.ige.ch. La liste peut aussi être produite sur une feuille séparée. Lorsque seul le numéro de
+                classe est indiqué, l’IPI part du principe que toutes les indications générales figurant dans l’intitulé
+                de cette classe sont revendiquées (voir la liste des intitulés de classes sous www.ipi.ch/lps). Ceci
+                n’est toutefois pas valable pour la classe 45, dont les intitulés de classe sont formulés de manière trop
+                générale. Pour cette classe, l’IPI devra exiger des précisions.
+            </p>
+            <div class="form-group">
+                <textarea id="products" name="products" class="form-control" rows="7" cols="33"></textarea>
+            </div>
+            <label for="productsfile">Voir feuille séparée </label>
+            <input type="file" name="productsfile" id="productsfile" class="form-control file-input">
+        </div>
+
+        <!-- Brand Category -->
+        
+        <div class="formheader-container">
+            <div class="section-formheader-container">
+                <h3 class="section-header">Catégorie de marque</h3>
+            </div>
+            <div class="collapse-button-container">
+                <a (click)="showCategoryForm()">
+                    <h3 class="section-header collapse-button">+</h3>
+                </a>
+            </div>            
+        </div>
+
+        <div class="subform-container" *ngIf="categoryForm">
+            <p class="form-paragraph">
+                Veuillez marquer d’une croix ce qui convient. A défaut d’indication, la marque sera considérée comme
+                une marque individuelle.
+            </p>
+            <div class="form-group">
+                <input type="checkbox" class="checkbox-input" id="individualBrand" name="individualBrand">
+                <label for="individualBrand">Marque individuelle</label>
+                <input type="checkbox" class="checkbox-input" id="waranthyBrand" name="waranthyBrand">
+                <label for="waranthyBrand">Marque de garantie</label>
+                <input type="checkbox" class="checkbox-input" id="collectiveBrand" name="collectiveBrand">
+                <label for="collectiveBrand">Marque collective</label>
+            </div>
+        </div>
+
+        <!-- Priority Claim -->
+        
+        <div class="formheader-container">
+            <div class="section-formheader-container">
+                <h3 class="section-header">Revendication de priorité</h3>
+            </div>
+            <div class="collapse-button-container">
+                <a (click)="showPriorityForm()">
+                    <h3 class="section-header collapse-button">+</h3>
+                </a>
+            </div>            
+        </div>
+
+        <div class="subform-container" *ngIf="priorityForm">
+            <p class="form-paragraph">
+                Selon la convention de l’Union de Paris
+            </p>
+            <div class="form-group">
+                <label for="country">Pays</label>
+                <input type="text" class="form-control" name="country" id="country">
+                <label for="depositDate">Date du premier dépôt</label>
+                <input type="date" class="form-control" name="depositDate" id="depositDate">
+            </div>
+            <p class="form-paragraph">
+                Si une priorité partielle est revendiquée, il faut préciser sur quels produits et/ou services elle porte
+                ou produire un document de priorité.
+            </p>
+        </div>
+
+        <!-- Colors -->
+        
+        <div class="formheader-container">
+            <div class="section-formheader-container">
+                <h3 class="section-header">Couleur(s) revendiquée(s)</h3>
+            </div>
+            <div class="collapse-button-container">
+                <a (click)="showColorsForm()">
+                    <h3 class="section-header collapse-button">+</h3>
+                </a>
+            </div>            
+        </div>
+
+        <div class="subform-container" *ngIf="colorsForm">
+            <textarea id="colors" name="colors" class="form-control" rows="7" cols="33"></textarea>
+        </div>
+
+        <!-- Notes -->
+        
+        <div class="formheader-container">
+            <div class="section-formheader-container">
+                <h3 class="section-header">Remarques</h3>
+            </div>
+            <div class="collapse-button-container">
+                <a (click)="showNotesForm()">
+                    <h3 class="section-header collapse-button">+</h3>
+                </a>
+            </div>            
+        </div>
+
+        <div class="subform-container" *ngIf="notesForm">
+            <textarea id="notes" name="notes" class="form-control" rows="7" cols="33"></textarea>
+        </div>
+
+        <!-- Appendings -->
+        
+        <div class="formheader-container">
+            <div class="section-formheader-container">
+                <h3 class="section-header">Annexes</h3>
+            </div>
+            <div class="collapse-button-container">
+                <a (click)="showAppendingsForm()">
+                    <h3 class="section-header collapse-button">+</h3>
+                </a>
+            </div>            
+        </div>
+
+        <div class="subform-container" *ngIf="appendingsForm">
+
+            <input type="checkbox" class="checkbox-input" id="annexe1Check" name="annexe1Check">
+            <label for="annexe1">Annexe 1</label>
+            <input type="file" class="sum-input" name="annexe1" id="annexe1">
+
+            <input type="checkbox" class="checkbox-input" id="annexe2Check" name="annexe2Check">
+            <label for="annexe2">Annexe 2</label>
+            <input type="file" class="sum-input" name="annexe2" id="annexe2">
+
+            <input type="checkbox" class="checkbox-input" id="annexe3Check" name="annexe3Check">
+            <label for="annexe3">Annexe 3</label>
+            <input type="file" class="sum-input" name="annexe3" id="annexe3">
+
+            <input type="checkbox" class="checkbox-input" id="annexe4Check" name="annexe4Check">
+            <label for="annexe4">Annexe 4</label>
+            <input type="file" class="sum-input" name="annexe4" id="annexe4">
+
+        </div>
+
+        <!-- Date and Signature -->
+
+        <div class="formheader-container">
+            <div class="section-formheader-container">
+                <h3 class="section-header">Date et Signature</h3>
+            </div>
+            <div class="collapse-button-container">
+                <a (click)="showSignatureForm()">
+                    <h3 class="section-header collapse-button">+</h3>
+                </a>
+            </div>            
+        </div>
+
+        <div class="subform-container" *ngIf="signatureForm">
+            <div class="form-group">
+                <label for="signature">Date</label>
+                <input type="date" class="sum-input" name="signingDate" id="signingDate">
+
+                <label for="signature">Digital Signature</label>
+                <input type="file" class="sum-input" name="signature" id="signature">
+            </div>
+        </div>
+        
+        <hr>
         
         <button type="submit" class="submit-button" [disabled]="!tf.form.valid">Submit</button>
 
