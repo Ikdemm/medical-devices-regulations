@@ -4,7 +4,6 @@ import { PdfGeneratorService } from "src/app/services/pdf-generator.service";
 
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
-import { ɵAnimationGroupPlayer } from '@angular/animations';
 
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
